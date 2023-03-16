@@ -6,18 +6,17 @@ Most of the API's functions duplicates MQL interface.
 The project was designed using [WCF](https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf) framework with the intention of using flexibility to setup connections.
 
 ## Build environment
-The project is supported by Visual Studio 2017.  
+The project is supported by Visual Studio 2022.  
 It requires WIX Tools for preparing project's installers (http://wixtoolset.org/).
 
 Installing WIX for mtapi:
-1. Make sure you install one of the latest (3.14+) development releases of the wixtoolset for Visual Studio 2022.
-(If you use an older installer you will have to install the ancient .NET 3.5 framework, and that I am sure you will regret, if you do!).
+1. Make sure you install one of the latest (3.11.2+) development releases of the wixtoolset for Visual Studio 2022.
 2. Run the installer and wait for completion or for asking to also install the VS extensions.
 
 ![alt text](https://user-images.githubusercontent.com/52289379/97868674-c8c97a80-1d18-11eb-89f3-cdef9d9cc02f.png)
 
 3. Install the WiX Toolset Visual Studio Extension depending on your VS version.
-For example, if you use VS 2017, go [here](https://marketplace.visualstudio.com/items?itemName=WixToolset.WixToolsetVisualStudio2017Extension) or download from their GitHub, releases.
+For example, if you use VS 2022, go [here](https://marketplace.visualstudio.com/items?itemName=WixToolset.WixToolsetVisualStudio2022Extension) or download from their GitHub, releases.
 
 Use [MetaEditor](https://www.metatrader5.com/en/automated-trading/metaeditor) to working with MQL files.
 
