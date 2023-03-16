@@ -10,7 +10,7 @@ The project is supported by Visual Studio 2017.
 It requires WIX Tools for preparing project's installers (http://wixtoolset.org/).
 
 Installing WIX for mtapi:
-1. Make sure you install one of the latest (3.14+) development releases of the wixtoolset.
+1. Make sure you install one of the latest (3.14+) development releases of the wixtoolset for Visual Studio 2022.
 (If you use an older installer you will have to install the ancient .NET 3.5 framework, and that I am sure you will regret, if you do!).
 2. Run the installer and wait for completion or for asking to also install the VS extensions.
 
