@@ -1,4 +1,6 @@
 ## Introduction
+I original code get from [here](https://github.com/vdemydiuk/mtapi). I convert project to Visual studio 2022.
+
 MtApi provides a .NET API for working with famous trading platfrom [MetaTrader(MetaQuotes)](https://www.metatrader5.com/).  
 It is not API for connection to MT servers directly. MtApi is just a bridge between MT terminal and .NET applications designed by developers.  
 MtApi executes MQL commands and functions by MtApi's expert linked to chart of MetaTrader.  
