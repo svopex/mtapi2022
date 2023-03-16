@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
     <?define ProductName="MtApi" ?>
+
+    <?if $(var.Platform) = x64 ?>
+        <?define ProductPathNative="..\build\products\$(var.Configuration)\x64\"?>
+        <?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
+        <?define PlatformSystemFolder = "System64Folder" ?>
+    <?else ?>
+        <?define ProductPathNative="..\build\products\$(var.Configuration)\"?>
+        <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+        <?define PlatformSystemFolder = "SystemFolder" ?>
+    <?endif ?>
+
     <?define ProductVersion=!(bind.FileVersion.MtApi.dll) ?>
     <?define Manufacturer="DW"?>
     <?define ProductPath="..\build\products\$(var.Configuration)\"?>
   
 	<Product Id="*" 
-           Name="$(var.ProductName) $(var.ProductVersion)" 
-           Language="1033" 
-           Version="$(var.ProductVersion)" 
-           Manufacturer="$(var.Manufacturer)" 
-           UpgradeCode="4107F5F4-7300-4B45-88CE-63929AF228FA">
+            Name="$(var.ProductName) $(var.ProductVersion)" 
+            Language="1033" 
+            Version="$(var.ProductVersion)" 
+            Manufacturer="$(var.Manufacturer)" 
+            UpgradeCode="4107F5F4-7300-4B45-88CE-63929AF228FA">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <WixVariable Id="WixUILicenseRtf" Value="..\LICENSE.rtf" />
@@ -39,7 +50,7 @@
 
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
-      <Directory Id="ProgramFilesFolder">
+	  <Directory Id="$(var.PlatformProgramFilesFolder)">
         <Directory Id="INSTALLFOLDER" Name="$(var.ProductName)">
 
           <Directory Id="ExpertFolder" Name="Experts">
@@ -51,7 +62,7 @@
          </Directory>
       </Directory>
 
-      <Directory Id="SystemFolder">
+	  <Directory Id="$(var.PlatformSystemFolder)">
       </Directory>
 
       <Directory Id="ProgramMenuFolder">
@@ -76,17 +87,17 @@
                 </RegistryKey>
             </Component>
 
-            <!--<Component Id="MTApiServiceDll" Directory="INSTALLFOLDER">
-                <File Id="GAC_MTApiService.dll" Name="MTApiService.dll" KeyPath="yes"
-                    src="$(var.ProductPath)MTApiService.dll"/>
-            </Component>-->
-
             <Component Id="NewtonsoftJsondll" Directory="INSTALLFOLDER">
                 <File Id="Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" KeyPath="yes"
                     src="$(var.ProductPath)Newtonsoft.Json.dll"/>
             </Component>
-          
-            <Component Id="MtApiExpert" Directory="ExpertFolder">
+
+		  <Component Id="MTApiServiceDll" Directory="INSTALLFOLDER">
+			<File Id="GAC_MTApiService.dll" Name="MTApiService.dll" KeyPath="yes"
+				src="$(var.ProductPath)MTApiService.dll"/>
+		  </Component>
+
+		  <Component Id="MtApiExpert" Directory="ExpertFolder">
                 <File Id="MtApi.ex4" Name="MtApi.ex4" KeyPath="yes"
                     Source="..\mq4\MtApi.ex4" />
             </Component>
@@ -115,9 +126,9 @@
                 Assembly=".net" AssemblyManifest="MTApiService.dll" Vital="yes" />
           </Component>
 
-          <Component Id="MTConnectorDll" Directory="SystemFolder">
+          <Component Id="MTConnectorDll" Directory="$(var.PlatformSystemFolder)">
             <File Id="MTConnector.dll" Name="MTConnector.dll" KeyPath="yes"
-                  Source="$(var.ProductPath)MTConnector.dll" />
+                  Source="$(var.ProductPathNative)MTConnector.dll" />
           </Component>
 
         </ComponentGroup>

@@ -78,7 +78,6 @@
                     Action="createAndRemoveOnUninstall">
                     <RegistryValue Type="string" Value="[INSTALLFOLDER]"/>
                 </RegistryKey>
-
             </Component>
           
             <Component Id="NewtonsoftJsondll" Directory="INSTALLFOLDER">
