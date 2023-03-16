@@ -991,7 +991,7 @@ void Execute_Request()
 
 void Execute_OrderSend()
 {
-   MqlTradeRequest request={0};      
+   MqlTradeRequest request={};      
    ReadMqlTradeRequestFromCommand(request);
    
    MqlTradeResult result={0};
@@ -7155,7 +7155,7 @@ string ExecuteRequest_OrderSend(JSONObject *jo)
    CHECK_JSON_VALUE(jo, "TradeRequest", CreateErrorResponse(-1, "Undefinded mandatory parameter TradeRequest"));
    JSONObject* trade_request_jo = jo.getObject("TradeRequest");
       
-   MqlTradeRequest trade_request = {0};
+   MqlTradeRequest trade_request = {};
    bool converted = JsonToMqlTradeRequest(trade_request_jo, trade_request);
    if (converted == false)
       return CreateErrorResponse(-1, "Failed to parse parameter TradeRequest");
@@ -7179,7 +7179,7 @@ string ExecuteRequest_OrderSendAsync(JSONObject *jo)
    CHECK_JSON_VALUE(jo, "TradeRequest", CreateErrorResponse(-1, "Undefinded mandatory parameter TradeRequest"));
    JSONObject* trade_request_jo = jo.getObject("TradeRequest");
       
-   MqlTradeRequest trade_request = {0};
+   MqlTradeRequest trade_request = {};
    bool converted = JsonToMqlTradeRequest(trade_request_jo, trade_request);
    if (converted == false)
       return CreateErrorResponse(-1, "Failed to parse parameter TradeRequest");
@@ -7254,7 +7254,7 @@ string ExecuteRequest_OrderCheck(JSONObject *jo)
    CHECK_JSON_VALUE(jo, "TradeRequest", CreateErrorResponse(-1, "Undefinded mandatory parameter TradeRequest"));
    JSONObject* trade_request_jo = jo.getObject("TradeRequest");
       
-   MqlTradeRequest trade_request = {0};
+   MqlTradeRequest trade_request = {};
    JsonToMqlTradeRequest(trade_request_jo, trade_request);
    
    MqlTradeCheckResult trade_check_result = {0};   
