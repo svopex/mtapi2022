@@ -2,13 +2,13 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
 
   <?if $(var.Platform) = x64 ?>
-    <?define VcRedistFileName="vc_redist.x64.exe"?>
+  <?define MsiSourceFileName="MtApiInstaller_x64.msi"?>
+  <?define VcRedistFileName="vc_redist.x64.exe"?>
   <?else ?>
-    <?define VcRedistFileName="vc_redist.x86.exe"?>
+  <?define MsiSourceFileName="MtApiInstaller_x86.msi"?>
+  <?define VcRedistFileName="vc_redist.x86.exe"?>
   <?endif ?>
-
-  <?define MsiSourceFileName="MtApiInstaller.msi"?>
-
+  
   <?define ProductName="!(bind.packageName.MtApiMsi)" ?>
   <?define ProductVersion="!(bind.packageVersion.MtApiMsi)" ?>
   <?define Manufacturer="!(bind.packageManufacturer.MtApiMsi)" ?>

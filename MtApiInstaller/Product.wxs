@@ -37,16 +37,9 @@
           <ComponentGroupRef Id="MTConnectorComponents"/>
         </Feature>
 
-        <Property Id="WIXUI_INSTALLDIR">INSTALLFOLDER</Property>
-
-        <UI>
-            <UIRef Id="WixUI_Mondo" />
-        </UI>
-
-        <InstallExecuteSequence>
-            <Custom Action="InstallEx4FileAction" After="InstallFinalize">NOT Installed</Custom>
-        </InstallExecuteSequence>
-    </Product>
+	    <Property Id="WIXUI_INSTALLDIR">INSTALLFOLDER</Property>
+	    <UIRef Id="WixUI_Mondo" />
+	</Product>
 
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
