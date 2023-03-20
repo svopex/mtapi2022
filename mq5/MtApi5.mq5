@@ -6878,10 +6878,13 @@ string ResultToString(bool retVal, datetime from, datetime to)
 bool OrderCloseAll()
 {
    CTrade trade;
-   int i = PositionsTotal()-1;
+   int i = OrdersTotal()-1;
    while (i >= 0)
    {
-      if (trade.PositionClose(PositionGetSymbol(i))) i--;
+      ulong o_ticket = OrderGetTicket(i);
+      trade.OrderDelete(o_ticket);   
+      i--;
+      //if (trade.PositionClose(PositionGetSymbol(i))) i--;
    }
    return true;
 }
@@ -6893,7 +6896,7 @@ int PositionCloseAll()
    int i = total -1;
    while (i >= 0)
    {
-      if (trade.PositionClose(PositionGetSymbol(i))) i--;
+      if (trade.OrderDelete(PositionGetSymbol(i))) i--;
    }
    return total;
 }
