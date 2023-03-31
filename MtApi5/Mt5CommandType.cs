@@ -215,9 +215,10 @@ namespace MtApi5
         ChartScreenShot                     = 263,
         ChartIndicatorAdd                   = 280,
         ChartIndicatorGet                   = 281,
+		OrderClose                          = 282,
 
-        // Terminal Operations
-        TerminalCompany                     = 68,
+		// Terminal Operations
+		TerminalCompany                     = 68,
         TerminalName                        = 69,
         TerminalPath                        = 70,
 

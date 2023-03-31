@@ -919,6 +919,8 @@ int executeCommand()
    break;
    case 281: //ChartIndicatorGet
       Execute_ChartIndicatorGet();
+   case 282: //OrderClose
+      Execute_OrderClose();
    break;
    default:
       Print("Unknown command type = ", commandType);
@@ -1009,6 +1011,23 @@ void Execute_OrderCloseAll()
    if (!sendBooleanResponse(ExpertHandle, OrderCloseAll(), _response_error))
    {
       PrintResponseError("OrderCloseAll", _response_error);
+   }
+}
+
+void Execute_OrderClose()
+{
+   ulong ticket;
+   CTrade trade;
+      
+   if (!getULongValue(ExpertHandle, 0, ticket, _error))
+   {
+      PrintParamError("OrderClose", "ticket", _error);
+      sendErrorResponse(ExpertHandle, -1, _error, _response_error);
+      return;
+   }
+   if (!sendBooleanResponse(ExpertHandle, trade.OrderDelete(ticket), _response_error))
+   {
+      PrintResponseError("OrderClose", _response_error);
    }
 }
 
