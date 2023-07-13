@@ -36,10 +36,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MtApiSetupActions", "MtApiSetupActions\MtApiSetupActions.csproj", "{10800F37-F71B-4818-8351-8CF744295F80}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestClients", "TestClients", "{B91FF338-E05D-4EF1-948B-A2376DB37ECA}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\Users\svopex\AppData\Roaming\MetaQuotes\Terminal\43F49D49D50558DB08D779D92B21E3A8\MQL5\Experts\MtApi5.ex5 = ..\..\Users\svopex\AppData\Roaming\MetaQuotes\Terminal\43F49D49D50558DB08D779D92B21E3A8\MQL5\Experts\MtApi5.ex5
-		..\..\Users\svopex\AppData\Roaming\MetaQuotes\Terminal\43F49D49D50558DB08D779D92B21E3A8\MQL5\Experts\MtApi5.mq5 = ..\..\Users\svopex\AppData\Roaming\MetaQuotes\Terminal\43F49D49D50558DB08D779D92B21E3A8\MQL5\Experts\MtApi5.mq5
-	EndProjectSection
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "MtApi5Bootstrapper", "MtApi5Bootstrapper\MtApi5Bootstrapper.wixproj", "{1497E285-C228-490B-9638-565E118548FB}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -49,6 +45,23 @@ EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "MtApiBootstrapper", "MtApiBootstrapper\MtApiBootstrapper.wixproj", "{8E63046B-56E5-4623-8808-558AD72A8F2B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{78B94552-DB17-40EC-B7C6-23D32DB85DC1} = {78B94552-DB17-40EC-B7C6-23D32DB85DC1}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mq4", "mq4", "{B1AEA35F-CDCA-41FD-94A7-D850AD4B32DD}"
+	ProjectSection(SolutionItems) = preProject
+		mq4\hash.mqh = mq4\hash.mqh
+		mq4\json.mqh = mq4\json.mqh
+		mq4\mql4-auth.mqh = mq4\mql4-auth.mqh
+		mq4\MtApi.ex4 = mq4\MtApi.ex4
+		mq4\MtApi.mq4 = mq4\MtApi.mq4
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mq5", "mq5", "{D0127881-EEB2-49B2-BCA7-1115C28260D8}"
+	ProjectSection(SolutionItems) = preProject
+		mq5\hash.mqh = mq5\hash.mqh
+		mq5\json.mqh = mq5\json.mqh
+		mq5\MtApi5.ex5 = mq5\MtApi5.ex5
+		mq5\MtApi5.mq5 = mq5\MtApi5.mq5
 	EndProjectSection
 EndProject
 Global
