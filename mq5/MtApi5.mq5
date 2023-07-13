@@ -274,7 +274,7 @@ int deinit()
          isCrashed = true;
          return (1);
       }
-      Print("Expert was deinitialized.");
+      //Print("Expert was deinitialized.");
    }
    
    return (0);
