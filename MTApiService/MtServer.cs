@@ -12,7 +12,7 @@ namespace MTApiService
     internal class MtServer : IDisposable, IMtApiServer
     {
         #region Constants
-        private const int WaitResponseTime = 40000; // 40 sec
+        private const int WaitResponseTime = 10000; // 10 sec
         private const int StopExpertInterval = 1000; // 1 sec 
         #endregion
 
