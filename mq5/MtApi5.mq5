@@ -1528,7 +1528,7 @@ void Execute_HistoryDealsTotal()
 
 void Execute_HistoryDealGetTicket()
 {
-   uint index;
+   int index;
    
    if (!getIntValue(ExpertHandle, 0, index, _error))
    {
